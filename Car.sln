@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car.App", "Car.App\Car.App.csproj", "{83E81910-A058-45E2-97CF-E1D9C7140A21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Docs", "_Docs", "{D46A17F4-9C18-4D97-AAC9-4BEF4B59CEB6}"
+	ProjectSection(SolutionItems) = preProject
+		_Docs\Aufgabe.docx = _Docs\Aufgabe.docx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA405BDD-D9E0-4CB3-A76A-62C700BF4379}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83E81910-A058-45E2-97CF-E1D9C7140A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E81910-A058-45E2-97CF-E1D9C7140A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E81910-A058-45E2-97CF-E1D9C7140A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E81910-A058-45E2-97CF-E1D9C7140A21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADE487BB-06D0-4A24-B746-299CF67CDCBA}
+	EndGlobalSection
+EndGlobal
