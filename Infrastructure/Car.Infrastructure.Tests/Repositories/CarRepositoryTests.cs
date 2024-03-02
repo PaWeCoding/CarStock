@@ -14,6 +14,33 @@ namespace Car.Infrastructure.Tests.Repositories
             _testee = new CarRepository();
 
         [TestMethod]
+        public void InsertMany_InsertSameCarTwice_InsertsSameCarAgain()
+        {
+            // Arrange
+            var car = CreateCar();
+            var carList = new List<CarBase> { car };
+
+            // Act
+            _testee.InsertMany(carList);
+            _testee.InsertMany(carList);
+
+            // Assert
+            var cars = _testee.GetAll().ToList();
+            Assert.AreEqual(2, cars.Count);
+        }
+
+        [TestMethod]
+        public void InsertMany_EmptyList_AddsNoCar()
+        {
+            // Act
+            _testee.InsertMany([]);
+
+            // Assert
+            var cars = _testee.GetAll().ToList();
+            Assert.AreEqual(0, cars.Count);
+        }
+
+        [TestMethod]
         public void GetAll_InsertNoCar_ReturnsEmptyList()
         {
             // Act
