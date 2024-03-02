@@ -11,16 +11,14 @@ namespace Car.Core.Services
         public void BookInMany(IEnumerable<CarBase> cars) =>
             _carRepository.InsertMany(cars);
 
-        public void PrintStock()
+        // Assumption: Since the order is not specified, I have decided to return the car stock in descending order based on the year
+        public IList<CarBase> GetStockOrderedByYearDesc()
         {
-            // Assumption: Since the print order is not specified, I have decided to print the stock in descending order based on the year
-            var cars = 
+            var carStock =
                 _carRepository.GetAll()
-                    .OrderByDescending(c => c.Year)
-                    .Select(c => $"{c.Brand},\t{c.Year},\t{c.MaxSpeedKmh}km/h")
+                    .OrderByDescending(car => car.Year)
                     .ToList();
-            Console.WriteLine("Brand\tYear\tMax Speed");
-            cars.ForEach(Console.WriteLine);
+            return carStock;
         }
     }
 }

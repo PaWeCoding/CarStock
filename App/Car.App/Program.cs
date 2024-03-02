@@ -17,7 +17,7 @@ var cars =
         {
             var carBrand = (CarBrands)random.Next(0, 2);
             CarBase car;
-            // Assumption: Since we do not print out any information about the tyres, I have decided to go with the default config
+            // Assumption: Since the tyre information is currently not used, I have decided to go with the default config for all tyres
             if(carBrand == CarBrands.Ford)
             {
                 car = carFactory.CreateFord(config =>
@@ -36,7 +36,12 @@ var cars =
         });
 
 carStockService.BookInMany(cars);
-carStockService.PrintStock();
+var carStock = 
+    carStockService.GetStockOrderedByYearDesc()
+        .Select(c => $"{c.Brand},\t{c.Year},\t{c.MaxSpeedKmh}km/h")
+        .ToList();
+Console.WriteLine("Brand\tYear\tMax Speed");
+carStock.ForEach(Console.WriteLine);
 
 ushort CalculateYear()
 {

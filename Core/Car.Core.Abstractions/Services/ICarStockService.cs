@@ -5,6 +5,6 @@ namespace Car.Core.Abstractions.Services
     public interface ICarStockService
     {
         void BookInMany(IEnumerable<CarBase> cars);
-        void PrintStock();
+        IList<CarBase> GetStockOrderedByYearDesc();
     }
 }
