@@ -2,7 +2,7 @@
 
 namespace Car.Infrastructure.Abstractions.Entities
 {
-    public sealed record VWCar : Car
+    public sealed record VWCar : CarBase
     {
         public VWCar(
             ushort year,

@@ -2,7 +2,7 @@
 
 namespace Car.Infrastructure.Abstractions.Entities
 {
-    public abstract record Car(
+    public abstract record CarBase(
         CarBrands Brand, 
         ushort MaxSpeedKmh, 
         ushort Year)
