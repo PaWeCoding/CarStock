@@ -5,7 +5,7 @@ using Car.Infrastructure.Repositories;
 namespace Car.Infrastructure.Tests.Repositories
 {
     [TestClass]
-    public class CarRepositoryTest
+    public class CarRepositoryTests
     {
         private CarRepository _testee = null!;
 
