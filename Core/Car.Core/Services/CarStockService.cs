@@ -17,8 +17,9 @@ namespace Car.Core.Services
             var cars = 
                 _carRepository.GetAll()
                     .OrderByDescending(c => c.Year)
-                    .Select(c => $"{c.Brand}, {c.Year}, {c.MaxSpeedKmh}km/h")
+                    .Select(c => $"{c.Brand},\t{c.Year},\t{c.MaxSpeedKmh}km/h")
                     .ToList();
+            Console.WriteLine("Brand\tYear\tMax Speed");
             cars.ForEach(Console.WriteLine);
         }
     }
