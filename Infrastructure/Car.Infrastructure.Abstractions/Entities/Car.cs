@@ -5,9 +5,11 @@ namespace Car.Infrastructure.Abstractions.Entities
     public abstract record Car(
         CarBrands Brand, 
         ushort MaxSpeedKmh, 
-        ushort Year, 
-        Tyre FrontLeftTyre, 
-        Tyre FrontRightTyre, 
-        Tyre RearLeftTyre, 
-        Tyre RearRightTyre);
+        ushort Year)
+    {
+        public Tyre FrontLeftTyre { get; set; } = null!;
+        public Tyre FrontRightTyre { get; set; } = null!;
+        public Tyre RearLeftTyre { get; set; } = null!;
+        public Tyre RearRightTyre { get; set; } = null!;
+    }
 }

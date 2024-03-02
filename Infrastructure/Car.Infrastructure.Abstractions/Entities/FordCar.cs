@@ -5,19 +5,20 @@ namespace Car.Infrastructure.Abstractions.Entities
     public sealed record FordCar : Car
     {
         public FordCar(
-            ushort Year,
-            Tyre FrontLeftTyre,
-            Tyre FrontRightTyre,
-            Tyre RearLeftTyre,
-            Tyre RearRightTyre) :
+            ushort year,
+            Tyre frontLeftTyre,
+            Tyre frontRightTyre,
+            Tyre rearLeftTyre,
+            Tyre rearRightTyre) :
             base(
                 CarBrands.Ford,
                 MaxSpeedKmh: 250,
-                Year,
-                FrontLeftTyre,
-                FrontRightTyre,
-                RearLeftTyre,
-                RearRightTyre)
-        { }
+                year)
+        {
+            FrontLeftTyre = frontLeftTyre;
+            FrontRightTyre = frontRightTyre;
+            RearLeftTyre = rearLeftTyre;
+            RearRightTyre = rearRightTyre;
+        }
     }
 }
