@@ -6,10 +6,10 @@ namespace Car.Core.Services
 {
     public sealed class CarFactory : ICarFactory
     {
-        public FordCar CreateFord(Action<CarConfig> config)
+        public FordCar CreateFord(Action<CarConfig>? config = default)
         {
             var carConfig = new CarConfig();
-            config.Invoke(carConfig);
+            config?.Invoke(carConfig);
 
             var (FrontLeftTyre, FrontRightTyre, RearLeftTyre, RearRightTyre) = CreateTyres(carConfig.TyreConfig);
 
@@ -23,10 +23,10 @@ namespace Car.Core.Services
             return fordCar;
         }
 
-        public VWCar CreateVW(Action<CarConfig> config)
+        public VWCar CreateVW(Action<CarConfig>? config = default)
         {
             var carConfig = new CarConfig();
-            config.Invoke(carConfig);
+            config?.Invoke(carConfig);
 
             var (FrontLeftTyre, FrontRightTyre, RearLeftTyre, RearRightTyre) = CreateTyres(carConfig.TyreConfig);
 
