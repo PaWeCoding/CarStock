@@ -16,22 +16,7 @@ var cars =
         .Select(_ =>
         {
             var carBrand = (CarBrands)random.Next(0, 2);
-            CarBase car;
-            // Assumption: Since the tyre information is currently not used, I have decided to go with the default config for all tyres
-            if(carBrand == CarBrands.Ford)
-            {
-                car = carFactory.CreateFord(config =>
-                {
-                    config.Year = CalculateYear();
-                });
-            }
-            else
-            {
-                car = carFactory.CreateVW(config =>
-                {
-                    config.Year = CalculateYear();
-                });
-            }
+            var car = CreateCar(carBrand);
             return car;
         });
 
@@ -42,6 +27,23 @@ var carStock =
         .ToList();
 Console.WriteLine("Brand\tYear\tMax Speed");
 carStock.ForEach(Console.WriteLine);
+
+// Assumption: Since the tyre information is currently not used, I have decided to go with the default config for all tyres
+CarBase CreateCar(CarBrands carBrands) =>
+    carBrands switch
+    { 
+        CarBrands.Ford => 
+            carFactory.CreateFord(config =>
+            {
+                config.Year = CalculateYear();
+            }),
+        CarBrands.VW =>
+            carFactory.CreateVW(config =>
+            {
+                config.Year = CalculateYear();
+            }),
+        _ => throw new ArgumentException("Invalid enum value", nameof(carBrands))
+    };
 
 ushort CalculateYear()
 {
