@@ -1,5 +1,6 @@
 ﻿using Car.Core.Services;
 using Car.Infrastructure.Abstractions.Entities;
+using Car.Infrastructure.Abstractions.Enums;
 using Car.Infrastructure.Abstractions.Repositories;
 using NSubstitute;
 
@@ -22,13 +23,11 @@ namespace Car.Core.Tests.Services
         public void GetStockOrderedByYearDesc_InsertCarsWithDifferentYears_ReturnsCarsOrderedByYearDesc()
         {
             // Arrange
-#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             var cars = new List<CarBase>
             {
-                new FordCar(2018, default, default, default, default),
-                new FordCar(2024, default, default, default, default)
+                CreateCar(year: 2018),
+                CreateCar(year: 2024)
             };
-#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
             _carRepository.GetAll().Returns(cars.AsQueryable());
 
             // Act
@@ -39,6 +38,12 @@ namespace Car.Core.Tests.Services
             var lastCar = carStock.Last();
             Assert.AreEqual(2024, firstCar.Year);
             Assert.AreEqual(2018, lastCar.Year);
+        }
+
+        private static FordCar CreateCar(ushort year)
+        {
+            var tyre = new Tyre(TyreBrands.Pirelli, 55);
+            return new FordCar(year, tyre, tyre, tyre, tyre);
         }
     }
 }
