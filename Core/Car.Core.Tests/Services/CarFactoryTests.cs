@@ -6,6 +6,10 @@ namespace Car.Core.Tests.Services
     [TestClass]
     public class CarFactoryTests
     {
+        private const TyreBrands DefaultTyreBrand = TyreBrands.Pirelli;
+        private const ushort DefaultTyrePressurePsi = 55;
+        private const ushort DefaultTyreSizeInch = 17;
+
         private CarFactory _testee = null!;
 
         [TestInitialize]
@@ -62,10 +66,10 @@ namespace Car.Core.Tests.Services
             var fordCar = _testee.CreateFord();
 
             // Assert
-            Assert.AreEqual(TyreBrands.Pirelli, fordCar.FrontLeftTyre.Brand);
-            Assert.AreEqual(TyreBrands.Pirelli, fordCar.FrontRightTyre.Brand);
-            Assert.AreEqual(TyreBrands.Pirelli, fordCar.RearLeftTyre.Brand);
-            Assert.AreEqual(TyreBrands.Pirelli, fordCar.RearRightTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, fordCar.FrontLeftTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, fordCar.FrontRightTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, fordCar.RearLeftTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, fordCar.RearRightTyre.Brand);
         }
 
         [TestMethod]
@@ -75,10 +79,10 @@ namespace Car.Core.Tests.Services
             var fordCar = _testee.CreateFord();
 
             // Assert
-            Assert.AreEqual(17, fordCar.FrontLeftTyre.SizeInch);
-            Assert.AreEqual(17, fordCar.FrontRightTyre.SizeInch);
-            Assert.AreEqual(17, fordCar.RearLeftTyre.SizeInch);
-            Assert.AreEqual(17, fordCar.RearRightTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, fordCar.FrontLeftTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, fordCar.FrontRightTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, fordCar.RearLeftTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, fordCar.RearRightTyre.SizeInch);
         }
 
         [TestMethod]
@@ -88,8 +92,8 @@ namespace Car.Core.Tests.Services
             var fordCar = _testee.CreateFord();
 
             // Assert
-            Assert.AreEqual(55, fordCar.FrontLeftTyre.PressurePsi);
-            Assert.AreEqual(55, fordCar.FrontRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.FrontLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.FrontRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -99,8 +103,8 @@ namespace Car.Core.Tests.Services
             var fordCar = _testee.CreateFord();
 
             // Assert
-            Assert.AreEqual(55, fordCar.RearLeftTyre.PressurePsi);
-            Assert.AreEqual(55, fordCar.RearRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.RearLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.RearRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -169,8 +173,8 @@ namespace Car.Core.Tests.Services
             var fordCar = _testee.CreateFord(config => config.TyreConfig.FrontPressurePsi = 50);
 
             // Assert
-            Assert.AreEqual(55, fordCar.RearLeftTyre.PressurePsi);
-            Assert.AreEqual(55, fordCar.RearRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.RearLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.RearRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -194,8 +198,8 @@ namespace Car.Core.Tests.Services
             var fordCar = _testee.CreateFord(config => config.TyreConfig.RearPressurePsi = 50);
 
             // Assert
-            Assert.AreEqual(55, fordCar.FrontLeftTyre.PressurePsi);
-            Assert.AreEqual(55, fordCar.FrontRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.FrontLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, fordCar.FrontRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -248,10 +252,10 @@ namespace Car.Core.Tests.Services
             var vwCar = _testee.CreateVW();
 
             // Assert
-            Assert.AreEqual(TyreBrands.Pirelli, vwCar.FrontLeftTyre.Brand);
-            Assert.AreEqual(TyreBrands.Pirelli, vwCar.FrontRightTyre.Brand);
-            Assert.AreEqual(TyreBrands.Pirelli, vwCar.RearLeftTyre.Brand);
-            Assert.AreEqual(TyreBrands.Pirelli, vwCar.RearRightTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, vwCar.FrontLeftTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, vwCar.FrontRightTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, vwCar.RearLeftTyre.Brand);
+            Assert.AreEqual(DefaultTyreBrand, vwCar.RearRightTyre.Brand);
         }
 
         [TestMethod]
@@ -261,10 +265,10 @@ namespace Car.Core.Tests.Services
             var vwCar = _testee.CreateVW();
 
             // Assert
-            Assert.AreEqual(17, vwCar.FrontLeftTyre.SizeInch);
-            Assert.AreEqual(17, vwCar.FrontRightTyre.SizeInch);
-            Assert.AreEqual(17, vwCar.RearLeftTyre.SizeInch);
-            Assert.AreEqual(17, vwCar.RearRightTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, vwCar.FrontLeftTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, vwCar.FrontRightTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, vwCar.RearLeftTyre.SizeInch);
+            Assert.AreEqual(DefaultTyreSizeInch, vwCar.RearRightTyre.SizeInch);
         }
 
         [TestMethod]
@@ -274,8 +278,8 @@ namespace Car.Core.Tests.Services
             var vwCar = _testee.CreateVW();
 
             // Assert
-            Assert.AreEqual(55, vwCar.FrontLeftTyre.PressurePsi);
-            Assert.AreEqual(55, vwCar.FrontRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.FrontLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.FrontRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -285,8 +289,8 @@ namespace Car.Core.Tests.Services
             var vwCar = _testee.CreateVW();
 
             // Assert
-            Assert.AreEqual(55, vwCar.RearLeftTyre.PressurePsi);
-            Assert.AreEqual(55, vwCar.RearRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.RearLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.RearRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -355,8 +359,8 @@ namespace Car.Core.Tests.Services
             var vwCar = _testee.CreateVW(config => config.TyreConfig.FrontPressurePsi = 50);
 
             // Assert
-            Assert.AreEqual(55, vwCar.RearLeftTyre.PressurePsi);
-            Assert.AreEqual(55, vwCar.RearRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.RearLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.RearRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -380,8 +384,8 @@ namespace Car.Core.Tests.Services
             var vwCar = _testee.CreateVW(config => config.TyreConfig.RearPressurePsi = 50);
 
             // Assert
-            Assert.AreEqual(55, vwCar.FrontLeftTyre.PressurePsi);
-            Assert.AreEqual(55, vwCar.FrontRightTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.FrontLeftTyre.PressurePsi);
+            Assert.AreEqual(DefaultTyrePressurePsi, vwCar.FrontRightTyre.PressurePsi);
         }
     }
 }
