@@ -5,7 +5,7 @@ namespace Car.Core.Abstractions.Services
 {
     public interface ICarFactory
     {
-        FordCar CreateFord(Action<CarConfig> config);
-        VWCar CreateVW(Action<CarConfig> config);
+        FordCar CreateFord(Action<CarConfig>? config = default);
+        VWCar CreateVW(Action<CarConfig>? config = default);
     }
 }
