@@ -35,7 +35,7 @@ Each layer (besides the UI layer) consists of three different projects:
 - **Car.\<Layer>.Tests.csproj**
 -> Contains unit tests for the logic of the layer
 ## About the Code
-The code follows the **clean code** principles, meaning that the code is written in a way that it is self-explanatory in terms of expected functionality (including SRR), naming, structure, complexity and general code size. Comments are only used to further explain some parts of the code where needed AND to highlight locations where assumptions were made.
+The code follows the **clean code** principles, meaning that the code is written in a way that it is self-explanatory in terms of expected functionality (including SRP), naming, structure, complexity and general code size. Comments are only used to further explain some parts of the code where needed AND to highlight locations where assumptions were made.
 ## Testing
 The test projects <em>Car.Core.Tests.csproj</em> and <em>Car.Infrastructure.Tests.csproj</em> contain several unit tests for the major logic in the application. The tests are built using **MSTest** and **NSubstitute** in a way that each test is only dependent on the logic of the currently tested unit to ensure best possible test isolation.
 ## Some Thoughts about Future Improvements
