@@ -6,6 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Docs", "_Docs", "{D46A17F4-9C18-4D97-AAC9-4BEF4B59CEB6}"
 	ProjectSection(SolutionItems) = preProject
 		_Docs\Aufgabe.docx = _Docs\Aufgabe.docx
+		_Docs\Design.drawio = _Docs\Design.drawio
+		_Docs\Design.pdf = _Docs\Design.pdf
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA405BDD-D9E0-4CB3-A76A-62C700BF4379}"
