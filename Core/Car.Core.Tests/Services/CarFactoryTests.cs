@@ -160,8 +160,17 @@ namespace Car.Core.Tests.Services
             // Assert
             Assert.AreEqual(tyrePressurePsi, fordCar.FrontLeftTyre.PressurePsi);
             Assert.AreEqual(tyrePressurePsi, fordCar.FrontRightTyre.PressurePsi);
-            Assert.AreNotEqual(tyrePressurePsi, fordCar.RearLeftTyre.PressurePsi);
-            Assert.AreNotEqual(tyrePressurePsi, fordCar.RearRightTyre.PressurePsi);
+        }
+
+        [TestMethod]
+        public void CreateFord_SetFrontTyrePressurePsi_RearTyresHaveDefaultPressurePsiSet()
+        {
+            // Act
+            var fordCar = _testee.CreateFord(config => config.TyreConfig.FrontPressurePsi = 50);
+
+            // Assert
+            Assert.AreEqual(55, fordCar.RearLeftTyre.PressurePsi);
+            Assert.AreEqual(55, fordCar.RearRightTyre.PressurePsi);
         }
 
         [TestMethod]
@@ -176,8 +185,17 @@ namespace Car.Core.Tests.Services
             // Assert
             Assert.AreEqual(tyrePressurePsi, fordCar.RearLeftTyre.PressurePsi);
             Assert.AreEqual(tyrePressurePsi, fordCar.RearRightTyre.PressurePsi);
-            Assert.AreNotEqual(tyrePressurePsi, fordCar.FrontLeftTyre.PressurePsi);
-            Assert.AreNotEqual(tyrePressurePsi, fordCar.FrontRightTyre.PressurePsi);
+        }
+
+        [TestMethod]
+        public void CreateFord_SetRearTyrePressurePsi_FrontTyresHaveDefaultPressurePsiSet()
+        {
+            // Act
+            var fordCar = _testee.CreateFord(config => config.TyreConfig.RearPressurePsi = 50);
+
+            // Assert
+            Assert.AreEqual(55, fordCar.FrontLeftTyre.PressurePsi);
+            Assert.AreEqual(55, fordCar.FrontRightTyre.PressurePsi);
         }
     }
 }
